@@ -6,6 +6,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+font-face { font-family: Prida36; src: url('fonts/Prida36.ttf'); }
+
 body {
   font-family: sans-serif;
   line-height: 1.5;
@@ -41,7 +44,8 @@ header {
 }
 
 header h1 {
-  font-size: 2em;
+  font-family:Prida36
+  font-size: 3em;
   margin-bottom: 10px;
 }
 
