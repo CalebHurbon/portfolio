@@ -1,22 +1,4 @@
 # Portfolio
 Webpage for showcasing work
 
-Directory Stucture
-Main
-  fonts
-  media
-    images
-    videos
-  JS
-  CSS
-  index.html(showcase)
-  Pages
-    About
-      Resume
-    Qlab
-    ETC
-    Contact
-    Showcase
-        The Little MErmaid
-        Suessical
-        
+I am an up & coming designer and stage tech. I am creating this website to showcase some of my work. https://calebhurbon.github.io/portfolio
