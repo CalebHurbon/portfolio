@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Designer - Technician - Dreamer</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="media/images/icon.ico" type="image/x-icon">
+</head>
+<body>
+
+<header>
+  <h1>Lighting Design</h1>
+  <br>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+
+<h2>Suessical Jr</h2>
+  <section id="showinfo">
+
+
+
+
+
+
+<!------------------------------------------------------------------------------->
+<style>
+  /* Container for the slideshow */
+  .slideshow {
+    width: 100%;
+/*    max-width: 900px;
+*/    height: 500px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff; /* optional background */
+  }
+
+  /* Style for images */
+  .slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Scale images to fit, maintain aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Show the active image */
+  .slideshow img.active {
+    opacity: 1;
+  }
+
+  /* Left/Right arrows on edges */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: rgba(255,255,255,0.8);
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+  }
+  .arrow.left {
+    left: 10px;
+  }
+  .arrow.right {
+    right: 10px;
+  }
+
+  /* Dots container inside the slideshow at bottom center */
+  .dots {
+    position: absolute;
+    bottom: 20px; /* moved to bottom inside container */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Dots style, larger size */
+  .dot {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin: 0 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .dot.active {
+    background-color: #717171;
+  }
+</style>
+</head>
+<body>
+
+<div class="slideshow" id="slideshow">
+  <!-- Arrows -->
+  <div class="arrow left" id="prev">&#10094;</div>
+  <div class="arrow right" id="next">&#10095;</div>
+
+  <!-- Images -->
+  <img src="media/images/suess/1.webp" class="active" alt="Slide 1" />
+  <img src="media/images/suess/2.webp" class="active" alt="Slide 2" />
+  <img src="media/images/suess/3.webp" class="active" alt="Slide 3" />
+  <img src="media/images/suess/4.webp" class="active" alt="Slide 4" />
+  <img src="media/images/suess/5.webp" class="active" alt="Slide 5" />
+  <img src="media/images/SuessCover.webp" class="active" alt="slide 0"/>
+
+
+  <!-- Dots -->
+  <div class="dots" id="dots"></div>
+</div>
+
+<script>
+  const images = document.querySelectorAll('#slideshow img');
+  const dotsContainer = document.getElementById('dots');
+  const prevArrow = document.getElementById('prev');
+  const nextArrow = document.getElementById('next');
+
+  let currentIndex = 0;
+
+  // Create dots
+  images.forEach((_, index) => {
+    const dot = document.createElement('span');
+    dot.className = 'dot';
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      showSlide(index);
+    });
+    dotsContainer.appendChild(dot);
+  });
+  const dots = document.querySelectorAll('.dot');
+
+  function showSlide(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+    });
+    currentIndex = index;
+  }
+
+  function nextSlide() {
+    const newIndex = (currentIndex + 1) % images.length;
+    showSlide(newIndex);
+  }
+
+  function prevSlide() {
+    const newIndex = (currentIndex - 1 + images.length) % images.length;
+    showSlide(newIndex);
+  }
+
+  // Keyboard arrow keys
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      nextSlide();
+    } else if (e.key === 'ArrowLeft') {
+      prevSlide();
+    }
+  });
+
+  // Arrow click controls
+  prevArrow.addEventListener('click', prevSlide);
+  nextArrow.addEventListener('click', nextSlide);
+
+  // Auto slide every 12 seconds
+  setInterval(nextSlide, 12000);
+</script>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+
+  </section>
+
+<section id="about">
+  <h2>About this Show</h2>
+  <p style="text-align:center; max-width:600px; margin:auto;">
+    My first production with Coastal Academy and my first time working with The Ritz Theatre! Being a very colorful musical, I had the opportunity to play with any hue I wanted. The most challenging part of design was the in-convenient layout of the light grid, as well as color matching an RGB fixture with CMY fixtures.
+
+
+    <br>My favorite part about this show is that it was entirely hands-free! Due to having few people availible to tech the show, I programed a mix of EOS time-codes and Qlab slices to trigger all cues automatically via network. A single student ran Qlab while I covered the followspot.
+    <br><br>I am most proud of my "time zero" cues that I used for lightning storms and music buttons; adding the florish and show-stopping pizzaz worthy of a Disney Musical!
+  </p>
+
+<p>&nbsp;</p>
+
+  <p style="text-align:Left; max-width:600px; margin:auto;">
+	<b>Location:</b> The Ritz Theatre, Escondido
+    <br><b>Number of cues:</b> 197
+    <br><b>Follow Spot Model:</b> Strong Trouperett III
+    <br><b>Lighting Fixtures:</b>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ProStage 348 (x 12)
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mega Lite Nova-Lite Q200 (x 15)
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mega Lite Drama Profile Q2 (x 32)
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VariLite SL LED Spot 300 (x 6)
+  <br>
+  </p>
+</section>
+
+
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="text-align:center; max-width:600px; margin:auto;">
+    Email: <a href="mailto:churbon@cox.net">Churbon@cox.net </a><br>
+    Phone: (760) 207-2267
+  </p>
+</section>
+
+<footer>
+  © 2024 Caleb Hurbon
+</footer>
+
+<!-- Link to external JavaScript -->
+<script src="scripts.js"></script>
+</body>
+</html>
