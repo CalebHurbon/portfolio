@@ -179,10 +179,8 @@ body {
 /* Image frame for non-lighting pages */
 .image-frame {
   max-width: 70%;
-  margin: 0 auto; /* Optional: centers the frame horizontally */
+  margin: 10px; /* Optional: centers the frame horizontally */
   padding: 10px; /* Optional: adds spacing around the image */
-  border: 2px solid #ccc; /* Optional: adds a border around the frame */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
   background-color: #f9f9f9; /* Optional: background color */
   display: inline-block; /* Ensures the container wraps around the image */
 }
