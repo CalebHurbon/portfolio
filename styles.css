@@ -155,7 +155,7 @@ body {
     border-radius: 4px;
     overflow: hidden;
     background: #fff;
-    max-width: 50%;
+    max-width: 25%;
     margin: auto;
     }
   .currentproject img {
@@ -229,6 +229,7 @@ body {
     font-size: 0.9em;
     color: #777;
     }
+
 
 
 
