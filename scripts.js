@@ -7,9 +7,10 @@ window.addEventListener('load', function() {
     localStorage.setItem('effectShown', 'true');
     setTimeout(function() {
       loader.classList.add('fade-out');
-    }, 2000);
+    }, 1500);
   } else {
     // Effect already shown before, hide loader immediately
     loader.style.display = 'none';
   }
 });
+
