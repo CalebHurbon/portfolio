@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Designer - Technician - Dreamer</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="media/images/icon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <h1>Services</h1>
+    <br>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+<h2>Projections</h2>
+  <section id="showinfo">
+
+<!------------------------------------------------------------------------------->
+<style>
+  /* Container for the slideshow */
+  .slideshow {
+    width: 100%;
+/*    max-width: 900px;
+*/    height: 500px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff; /* optional background */
+  }
+
+  /* Style for images */
+  .slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Scale images to fit, maintain aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Show the active image */
+  .slideshow img.active {
+    opacity: 1;
+  }
+
+  /* Left/Right arrows on edges */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: rgba(255,255,255,0.8);
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+  }
+  .arrow.left {
+    left: 10px;
+  }
+  .arrow.right {
+    right: 10px;
+  }
+
+  /* Dots container inside the slideshow at bottom center */
+  .dots {
+    position: absolute;
+    bottom: 20px; /* moved to bottom inside container */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Dots style, larger size */
+  .dot {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin: 0 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .dot.active {
+    background-color: #717171;
+  }
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+
+  
+</style>
+
+
+<h2>Accordion</h2>
+
+<button class="accordion">Section 1</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 2</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+
+<script>
+  const images = document.querySelectorAll('#slideshow img');
+  const dotsContainer = document.getElementById('dots');
+  const prevArrow = document.getElementById('prev');
+  const nextArrow = document.getElementById('next');
+
+  let currentIndex = 0;
+
+  // Create dots
+  images.forEach((_, index) => {
+    const dot = document.createElement('span');
+    dot.className = 'dot';
+    if (index === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      showSlide(index);
+    });
+    dotsContainer.appendChild(dot);
+  });
+  const dots = document.querySelectorAll('.dot');
+
+  function showSlide(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+    });
+    currentIndex = index;
+  }
+
+  function nextSlide() {
+    const newIndex = (currentIndex + 1) % images.length;
+    showSlide(newIndex);
+  }
+
+  function prevSlide() {
+    const newIndex = (currentIndex - 1 + images.length) % images.length;
+    showSlide(newIndex);
+  }
+
+  // Keyboard arrow keys
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      nextSlide();
+    } else if (e.key === 'ArrowLeft') {
+      prevSlide();
+    }
+  });
+
+  // Arrow click controls
+  prevArrow.addEventListener('click', prevSlide);
+  nextArrow.addEventListener('click', nextSlide);
+
+  // Auto slide every 12 seconds
+  setInterval(nextSlide, 12000);
+
+
+
+
+
+// Accordian script credit:w3schools
+  
+  var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+  
+</script>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+
+  </section>
+
+<section id="about">
+  <h2>About this Show</h2>
+  <p style="text-align:center; max-width:600px; margin:auto;">
+    This show was a challenge because it was a new space for us. The venue was also very old and under-equiped for our needs and cast size.
+	<br><br>However, with these limitations came new growth. I had the chance to practice classic theatrical lighting techniques; using gobos and DIY light trees to add deapth and contrast for this production.
+	Due to short staffing, it was nessisary to automate all lighting cues; syncronising them with the audio and the projections. To pull this off, we had to run our own cable from backstage so that the Mac could connect to the over-stage projector, the audio snake, and the light board in the booth.
+    <br><br>Aside from the incredible student tech crew, stage manager and followspot operators, I am most proud of my automation that I used to syncronize the show. I learned alot about Qlab this year.
+
+</p><p>&nbsp;</p>
+
+  <p style="text-align:Left; max-width:600px; margin:auto;">
+	<b>Location:</b> The AVO Theatre, Vista
+    <br><b>Number of cues:</b> 
+    <br><b>Follow Spot Model:</b> Lycian Midget
+    <br><b>Lighting Fixtures:</b>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ETC Leko (x 30)
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ETC Par (x 24)
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PARnel (x 30)
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generic LED pars (x 10)
+  <br>
+  </p>
+</section>
+
+
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="text-align:center; max-width:600px; margin:auto;">
+    Email: <a href="mailto:churbon@cox.net">Churbon@cox.net </a><br>
+    Phone: (760) 207-2267
+  </p>
+</section>
+
+<footer>
+  © 2025 Caleb Hurbon
+</footer>
+
+<!-- Link to external JavaScript -->
+<script src="scripts.js"></script>
+
+
+</body>
