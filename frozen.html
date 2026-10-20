@@ -22,6 +22,81 @@
 <h2>Frozen Jr</h2>
   <section id="showinfo">
 
+<!------------------------------------------------------------------------------->
+<style>
+  /* Container for the slideshow */
+  .slideshow {
+    width: 100%;
+/*    max-width: 900px;
+*/    height: 500px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff; /* optional background */
+  }
+
+  /* Style for images */
+  .slideshow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Scale images to fit, maintain aspect ratio */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Show the active image */
+  .slideshow img.active {
+    opacity: 1;
+  }
+
+  /* Left/Right arrows on edges */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: rgba(255,255,255,0.8);
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+  }
+  .arrow.left {
+    left: 10px;
+  }
+  .arrow.right {
+    right: 10px;
+  }
+
+  /* Dots container inside the slideshow at bottom center */
+  .dots {
+    position: absolute;
+    bottom: 20px; /* moved to bottom inside container */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Dots style, larger size */
+  .dot {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin: 0 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .dot.active {
+    background-color: #717171;
+  }
+</style>
 
 
 
