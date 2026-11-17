@@ -1,0 +1,71 @@
+.sweeping-lights {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.light {
+  position: absolute;
+  bottom: -12px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff7c2;
+  box-shadow:
+    0 0 10px 4px rgba(255, 235, 140, 0.9),
+    0 0 28px 10px rgba(255, 190, 70, 0.45);
+}
+
+/* Each beam is a wide, soft triangle anchored at its light. */
+.light::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 36vw;
+  height: 200vh;
+  transform-origin: 50% 100%;
+  opacity: 1;
+  filter: blur(0px);
+  background: linear-gradient(
+    to top,
+    rgba(255, 225, 140, 0.24),
+    rgba(255, 225, 140, 0.08) 100%,
+    transparent
+  );
+  clip-path: polygon(49% 100%, 51% 100%, 100% 0, 0 0);
+}
+
+.light--left {
+  left: 12px;
+}
+
+.light--left::before {
+  animation: sweep-left 5s ease-in-out infinite alternate;
+}
+
+.light--right {
+  right: 12px;
+}
+
+.light--right::before {
+  animation: sweep-right 5s ease-in-out infinite alternate;
+}
+
+@keyframes sweep-left {
+  from { transform: translateX(-50%) rotate(-35deg); }
+  to   { transform: translateX(-50%) rotate(50deg); }
+}
+
+@keyframes sweep-right {
+  from { transform: translateX(-50%) rotate(50deg); }
+  to   { transform: translateX(-50%) rotate(-35deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .light::before {
+    animation: none;
+  }
+}
